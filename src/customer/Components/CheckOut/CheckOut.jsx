@@ -5,12 +5,18 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useLocation } from "react-router-dom";
+import DeliveryAdress from "./DeliveryAdress";
+import OrderSummary from "./OrderSummary";
+import Navigation from "../NavBar/Navigation";
 
 const steps = ["Login", "Add Delivery Address", "Order Summary", "Payment"];
 
 export default function CheckOut() {
   const [activeStep, setActiveStep] = React.useState(0);
-  const [skipped, setSkipped] = React.useState(new Set());
+  let location = useLocation();
+  const querySearch = new URLSearchParams(location.search);
+  const step = querySearch.get("step");
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -22,8 +28,9 @@ export default function CheckOut() {
 
   return (
     <div>
+      <Navigation />
       <Box sx={{ width: "100%" }}>
-        <Stepper activeStep={activeStep}>
+        <Stepper activeStep={step}>
           {steps.map((label, index) => {
             const stepProps = {};
             const labelProps = {};
@@ -42,7 +49,6 @@ export default function CheckOut() {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
             <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
               <Button
                 color="inherit"
@@ -58,6 +64,10 @@ export default function CheckOut() {
                 {activeStep === steps.length - 1 ? "Finish" : "Next"}
               </Button>
             </Box>
+
+            <div className="mt-10">
+              {step == 2 ? <DeliveryAdress /> : <OrderSummary />}
+            </div>
           </React.Fragment>
         )}
       </Box>

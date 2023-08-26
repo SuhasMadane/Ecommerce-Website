@@ -7,15 +7,19 @@ import ProductDetailsPage from "./customer/Pages/ProductDetailsPage";
 import Cart from "./customer/Components/Cart/Cart";
 import Checkout from "./customer/Components/CheckOut/CheckOut";
 import Order from "./customer/Components/Order/Order";
+import Navigation from "./customer/Components/Navigation/Navigation";
 
 function App() {
   return (
     <>
-      {/* <HomePage /> */}
-      {/* <ProductsPage /> */}
-      {/* <ProductDetailsPage /> */}
-      {/* <Cart /> */}
-      {/* <Checkout /> */}
+      <div>
+        <Navigation />
+      </div>
+      <HomePage />
+      <ProductsPage />
+      <ProductDetailsPage />
+      <Cart />
+      <Checkout />
       <Order />
     </>
   );

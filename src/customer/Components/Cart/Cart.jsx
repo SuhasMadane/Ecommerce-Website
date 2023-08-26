@@ -2,7 +2,7 @@ import React from "react";
 import CartItem from "./CartItem";
 import Footer from "../Footer/Footer";
 import { Button } from "@mui/material";
-import Navigation from "../NavBar/Navigation";
+import Navigation from "../Navigation/Navigation";
 
 const Cart = () => {
   return (

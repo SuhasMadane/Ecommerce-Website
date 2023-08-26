@@ -1,6 +1,6 @@
 import React from "react";
 
-const SubCarouselProductCard = () => {
+const HomeSectionCard = ({ product }) => {
   return (
     <>
       <div
@@ -14,19 +14,17 @@ const SubCarouselProductCard = () => {
         <div className="h-[13rem] w-[10rem]">
           <img
             className="object-cover object-top w-full h-full"
-            src="https://m.media-amazon.com/images/I/81JHQqoD9gS._AC_UY1100_.jpg"
+            src={product.imageUrl}
             alt=""
           />
         </div>
         <div className="p-4">
-          <h3 className="text-lg font-medium text-gray-900">Nofilter</h3>
-          <p className="mt-2 text-sm text-gray-500">
-            Men Solid Pure Cotton Staright Kurta
-          </p>
+          <h3 className="text-lg font-medium text-gray-900">{product.brand}</h3>
+          <p className="mt-2 text-sm text-gray-500">{product.title}</p>
         </div>
       </div>
     </>
   );
 };
 
-export default SubCarouselProductCard;
+export default HomeSectionCard;

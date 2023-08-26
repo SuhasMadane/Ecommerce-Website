@@ -18,7 +18,8 @@ import {
   RadioGroup,
 } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { mens_kurta } from "../../Data/men/mens_kurta";
+import FilterListIcon from "@mui/icons-material/FilterList";
 const sortOptions = [
   { name: "Price: Low to High", href: "#", current: false },
   { name: "Price: High to Low", href: "#", current: false },
@@ -252,7 +253,13 @@ export default function Product() {
             </h2>
 
             <div>
-              <h2 className="py-5 font-semibold opacity-60 text-lg">Filters</h2>
+              <div className="">
+                <h2 className="py-5 font-semibold opacity-60 text-lg">
+                  Filters &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  <FilterListIcon />
+                </h2>
+              </div>
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-6">
                 {/* Filters */}
                 <form className="hidden lg:block">
@@ -294,15 +301,15 @@ export default function Product() {
                                   className="flex items-center"
                                 >
                                   <input
+                                    onChange={() =>
+                                      handleFilter(option.value, section.id)
+                                    }
                                     id={`filter-${section.id}-${optionIdx}`}
                                     name={`${section.id}[]`}
                                     defaultValue={option.value}
                                     type="checkbox"
                                     defaultChecked={option.checked}
                                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                    onChange={() =>
-                                      handleFilter(option.value, section.id)
-                                    }
                                   />
                                   <label
                                     htmlFor={`filter-${section.id}-${optionIdx}`}
@@ -330,9 +337,14 @@ export default function Product() {
                         <>
                           <h3 className="-my-3 flow-root">
                             <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                              <span className="font-medium text-gray-900">
+                              {/* <span className="font-medium "></span> */}
+                              <FormLabel
+                                sx={{ color: "black" }}
+                                className="text-gray-900"
+                                id="dem0-radio-buttons-group-label"
+                              >
                                 {section.name}
-                              </span>
+                              </FormLabel>
                               <span className="ml-6 flex items-center">
                                 {open ? (
                                   <MinusIcon
@@ -357,12 +369,12 @@ export default function Product() {
                               >
                                 {section.options.map((option) => (
                                   <FormControlLabel
-                                    value={option.value}
-                                    control={<Radio />}
-                                    label={option.label}
                                     onChange={(e) => {
                                       handleRadioFilterChange(e, section.id);
                                     }}
+                                    value={option.value}
+                                    control={<Radio />}
+                                    label={option.label}
                                   />
                                 ))}
                               </RadioGroup>
@@ -377,11 +389,8 @@ export default function Product() {
                 {/* Product grid */}
                 <div className="lg:col-span-5 w-full">
                   <div className="flex flex-wrap justify-center bg-white border py-5 rounded-md ">
-                    {[
-                      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                      1,
-                    ].map((item) => (
-                      <ProductCard />
+                    {mens_kurta.map((item) => (
+                      <ProductCard product={item} />
                     ))}
                   </div>
                 </div>

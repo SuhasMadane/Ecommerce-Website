@@ -4,6 +4,8 @@ import { RadioGroup } from "@headlessui/react";
 import { Box, Grid, LinearProgress, Rating } from "@mui/material";
 import ProductReviewCrad from "./ProductReviewCrad";
 import { red } from "@mui/material/colors";
+import { mens_kurta } from "../../Data/men/mens_kurta";
+import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 
 const product = {
   // here fetch data for product from backend which is choosen by user
@@ -308,7 +310,7 @@ export default function ProductDetails() {
                   Product Ratings
                 </h1>
                 <div>
-                  <Rating value={4} readonly precision={0.5} />
+                  <Rating value={4.6} readonly precision={0.5} />
                   <p className="opacity-50">54890 Ratings</p>
                 </div>
 
@@ -386,6 +388,15 @@ export default function ProductDetails() {
                 </Box>
               </Grid>
             </Grid>
+          </div>
+        </section>
+        {/*similar product */}
+        <section classname="pt-10">
+          <h1 className="py-5 text-xl font-bold">Similar Products</h1>
+          <div className="flex flex-wrap ml-20 space-y-5">
+            {mens_kurta.map((item) => (
+              <HomeSectionCard product={item} />
+            ))}
           </div>
         </section>
       </div>

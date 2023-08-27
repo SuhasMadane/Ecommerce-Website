@@ -5,7 +5,6 @@ import { Button } from "@mui/material";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
-import { mens_kurta } from "../../Data/men/mens_kurta";
 
 const HomeSectionCarousel = ({ data, sectionName }) => {
   const [activeIndex, setActiveIndex] = useState(0);

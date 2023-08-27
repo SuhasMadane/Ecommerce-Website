@@ -17,7 +17,7 @@ const DeliveryAdress = () => {
       zipCode: data.get("zip"),
       mobile: data.get("phoneNumber"),
     };
-    console.log("adress", data);
+    console.log("address", address);
   };
   return (
     //
@@ -29,12 +29,12 @@ const DeliveryAdress = () => {
               {" "}
               <AddressCard />
               <Button
-                sx={{ mt: 2 }}
+                sx={{ mt: 2, bgcolor: "RGB(145 85 153)" }}
                 size="large"
                 variant="contained"
                 color="primary"
               >
-                Deliverd Here
+                Deliver Here
               </Button>
             </div>
           </Box>
@@ -116,13 +116,16 @@ const DeliveryAdress = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <Button
-                    sx={{ padding: ".9rem 1.5rem" }}
+                    sx={{
+                      mt: 2,
+                      padding: ".9rem 1.5rem",
+                      bgcolor: "RGB(145 85 253)",
+                    }}
                     size="large"
                     type="submit"
                     variant="contained"
-                    color="primary"
                   >
-                    Deliverd Here
+                    Deliver Here
                   </Button>
                 </Grid>
               </Grid>

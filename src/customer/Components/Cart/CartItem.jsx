@@ -33,12 +33,17 @@ const CartItem = () => {
               </IconButton>
 
               <span className="py-1 px-7 border rounded-sm">3</span>
-              <IconButton color="primary" aria-label="add an alarm">
+              <IconButton
+                sx={{ color: "RGB(145 85 253)" }}
+                aria-label="add an alarm"
+              >
                 <AddCircleOutlineIcon />
               </IconButton>
             </div>
             <div className="flex text-sm lg:text-base mt-5 lg:mt-0">
-              <Button variant="text">Remove </Button>
+              <Button sx={{ color: "RGB(145 85 253)" }} variant="text">
+                Remove{" "}
+              </Button>
             </div>
           </div>
         </div>

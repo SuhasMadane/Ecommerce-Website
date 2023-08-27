@@ -12,15 +12,14 @@ import Navigation from "./customer/Components/Navigation/Navigation";
 function App() {
   return (
     <>
-      <div>
+      {/* <div>
         <Navigation />
       </div>
       <HomePage />
       <ProductsPage />
       <ProductDetailsPage />
-      <Cart />
+      <Cart /> */}
       <Checkout />
-      <Order />
     </>
   );
 }

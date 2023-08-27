@@ -9,12 +9,14 @@ import {
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import { navigation } from "./NavigationData";
+import { useNavigate } from "react-router-dom";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
 

@@ -18,7 +18,7 @@ const CartItem = () => {
             <p className="font-semibold">Men Slim Mid Rise Black Jeans</p>
             <p className="opacity-70">Size: L,White</p>
             <p className="opacity-70 mt-2">Seller: Crishtaliyo 2fashion</p>
-            <div className="flex space-x-2 items-center pt-3">
+            <div className="flex space-x-2 items-center  text-gray-900 pt-6">
               <p className="opacity-50 line-through">₹211</p>
               <p className="font-semibold text-lg">₹199</p>
               <p className="text-green-600 font-semibold">5% off</p>
@@ -33,12 +33,17 @@ const CartItem = () => {
               </IconButton>
 
               <span className="py-1 px-7 border rounded-sm">3</span>
-              <IconButton color="primary" aria-label="add an alarm">
+              <IconButton
+                sx={{ color: "RGB(145 85 253)" }}
+                aria-label="add an alarm"
+              >
                 <AddCircleOutlineIcon />
               </IconButton>
             </div>
             <div className="flex text-sm lg:text-base mt-5 lg:mt-0">
-              <Button variant="text">Remove </Button>
+              <Button sx={{ color: "RGB(145 85 253)" }} variant="text">
+                Remove{" "}
+              </Button>
             </div>
           </div>
         </div>

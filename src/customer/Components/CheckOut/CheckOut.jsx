@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { useLocation } from "react-router-dom";
 import DeliveryAdress from "./DeliveryAdress";
 import OrderSummary from "./OrderSummary";
-import Navigation from "../NavBar/Navigation";
+import Navigation from "../Navigation/Navigation";
 
 const steps = ["Login", "Add Delivery Address", "Order Summary", "Payment"];
 

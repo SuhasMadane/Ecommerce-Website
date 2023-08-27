@@ -20,7 +20,7 @@ const ProductReviewCrad = () => {
               <p className="opacity-70">August 23,2023</p>
             </div>
           </div>
-          <Rating value={4} readonly />
+          <Rating value={4.5} readonly precision={0.5} />
           <p>nice product,i love this shirt</p>
         </Grid>
       </Grid>
